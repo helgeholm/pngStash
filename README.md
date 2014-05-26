@@ -46,7 +46,7 @@ var stash = pngStash('avatar.png', function(err, stash) {
 
 For [Node.js](http://nodejs.org/), use [npm](http://npmjs.org/):
 
-    npm install pngStash
+    npm install png-stash
 
 ## Documentation
 
