@@ -1,5 +1,5 @@
 {
-  "name": "pngStash",
+  "name": "png-stash",
   "version": "1.0.0",
   "description": "Light steganography tool for hiding data in a PNG file.",
   "main": "pngStash.js",
