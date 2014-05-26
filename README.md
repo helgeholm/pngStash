@@ -35,7 +35,7 @@ var pngStash = require('png-stash');
 var stash = pngStash('avatar.png', function(err, stash) {
     if (err) throw new Error(err);
 
-    var message = stash.read(34); // 34 is length of message from example 1.
+    var message = stash.read(0, 34); // 34 is length of message from example 1.
 
     console.log(message);
 });
