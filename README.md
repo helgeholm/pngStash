@@ -5,8 +5,9 @@
 A very low level tool to read and write a message in the least
 significant bits of a PNG image's pixels.
 
-Also contains two command-line programs to read and write data up to
-16777215 characters in length.
+Also contains two command-line programs `bin/readfile.js` and
+`bin/writefile.js` to read and write data up to 16777215 characters in
+length.  These will print usage instructions when executed.
 
 ## Quick Example 1: Write Data
 
