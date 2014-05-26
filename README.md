@@ -1,6 +1,6 @@
-# pngStash.js
+# png-stash
 
-[![NPM](https://nodei.co/npm/pngStash.png)](https://nodei.co/npm/pngStash/)
+[![NPM](https://nodei.co/npm/png-stash.png)](https://nodei.co/npm/png-stash/)
 
 A very low level tool to read and write a message in the least
 significant bits of a PNG image's pixels.
