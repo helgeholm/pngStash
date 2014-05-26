@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Light steganography tool for hiding data in a PNG file.",
   "main": "pngStash.js",
+  "keywords": [
+    "steganography",
+    "png"
+  ],
   "scripts": {
     "test": "node_modules/mocha/bin/mocha"
   },
