@@ -11,6 +11,8 @@ Also contains two command-line programs to read and write data up to
 ## Quick Example 1: Write Data
 
 ```javascript
+var pngStash = require('png-stash');
+
 var stash = pngStash('avatar.png', function(err, stash) {
     if (err) throw new Error(err);
 
@@ -27,6 +29,8 @@ var stash = pngStash('avatar.png', function(err, stash) {
 ## Quick Example 2: Read Data
 
 ```javascript
+var pngStash = require('png-stash');
+
 var stash = pngStash('avatar.png', function(err, stash) {
     if (err) throw new Error(err);
 
@@ -82,6 +86,8 @@ __Arguments__
 __Example__
 
 ```javascript
+var pngStash = require('png-stash');
+
 pngStash("test.png", function(err, stash) {
   console.log("Available bytes: " + stash.length);
 });
@@ -101,6 +107,8 @@ __Arguments__
 __Example__
 
 ```javascript
+var pngStash = require('png-stash');
+
 pngStash("comic.png", function(err, stash) {
   var b1 = stash.getByte(1000);
   var b2 = stash.getByte(2000);
@@ -129,6 +137,8 @@ __Arguments__
 __Example__
 
 ```javascript
+var pngStash = require('png-stash');
+
 pngStash("comic.png", function(err, stash) {
   stash.setByte(1000, 0xaa);
   stash.setByte(2000, 0x44);
@@ -157,6 +167,8 @@ __Arguments__
 __Example__
 
 ```javascript
+var pngStash = require('png-stash');
+
 pngStash("message.png", function(err, stash) {
   var messageLength = stash.getByte(0) * 65536
                     + stash.getByte(1) * 256
@@ -185,6 +197,8 @@ __Arguments__
 __Example__
 
 ```javascript
+var pngStash = require('png-stash');
+
 pngStash("message.png", function(err, stash) {
   var message = new Buffer("Hello there!");
   stash.setByte(0, message.length >> 16 & 0xff);
@@ -209,4 +223,3 @@ __Arguments__
 __Example__
 
 // See examples for `stash.write()` and `stash.setByte()`.
-```
