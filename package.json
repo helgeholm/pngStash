@@ -9,7 +9,7 @@
   "author": {
     "name": "Helge Skogly Holm",
     "email": "helge.holm@gmail.com"
-  }
+  },
   "license": "MIT",
   "dependencies": {
     "underscore": "~1.6.0",
