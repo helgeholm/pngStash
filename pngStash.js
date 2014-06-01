@@ -58,7 +58,7 @@ function pngStash(filename, cb_) {
 
       if (offset < 0)
         throw new Error("Negative offset.");
-      if (offset + writeData.length >= length)
+      if (offset + writeLength > length)
         throw new Error("Offset + write length exceeds bounds (" + offset + 
                         " + " + writeLength + " > " + length + ").");
 

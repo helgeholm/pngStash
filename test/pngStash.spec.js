@@ -18,6 +18,37 @@ describe('pngStash', function() {
     });
   });
 
+  it('can write up to file end, and read rest-of-file from an offset', function(done) {
+    var testFile = __dirname + '/writeTest.png';
+    function cleanDone(err) {
+      fs.unlink(testFile, function ignore() {});
+      done(err);
+    }
+    var testMessage = new Buffer("Quite Interesting");
+    fs.unlink(testFile, copyBase);
+    function copyBase(_ignoreError) {
+      fs.createReadStream(__dirname + '/base.png')
+        .pipe(fs.createWriteStream(testFile))
+        .on('close', writeSomething);
+    }
+    function writeSomething() {
+      pngStash(testFile, function(err, stash) {
+        if (err) return cleanDone(err);
+        stash.write(testMessage, 3867, 5);
+        stash.save(readItBack);
+      });
+    }
+    function readItBack(err) {
+      if (err) return cleanDone(err);
+      pngStash(testFile, function(err, stash) {
+        if (err) return cleanDone(err);
+        var readed = stash.read(3867).toString();
+        assert.equal(readed, "Quite");
+        cleanDone();
+      });
+    }
+  });
+
   it('can write and read a message with multibyte chars', function(done) {
     var testFile = __dirname + '/writeTest.png';
     function cleanDone(err) {
